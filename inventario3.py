@@ -26,8 +26,13 @@ inicio = True
 while inicio == True:
     print("1.Agregar producto")
     print("2. Mostrar inventario")
-    print("3. Calcular estadísticas")
-    print("4. salir")
+    print("3. buscar")
+    print("4. actualizar")
+    print("5. eliminar")
+    print("6. estadisticas")
+    print("7. guardar csv")
+    print("8. cargar cvs")
+    print("9. salir")
     opcion = int(input("ingrese una opcion"))
     if opcion == 1:
         while True:
@@ -47,12 +52,19 @@ while inicio == True:
     elif opcion == 2:
          mostrar()
     elif opcion == 3:
-        calcular()
+         print
     elif opcion == 4:
+        print()
+    elif opcion == 5:
+        print()
+    elif opcion == 6:
+        calcular()
+    elif opcion == 7:
+        print()
+    elif opcion == 8:
+        print()
+    elif opcion == 9:
         print("saliendo del sistema")
         break
     else:
          print("ingrese un dato correcto")
-
-
-
