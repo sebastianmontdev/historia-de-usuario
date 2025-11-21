@@ -7,10 +7,12 @@ def calcular(inventario):
         total_inventario = total_inventario + precio_total
         cantidad = len(inventario)
         producto_mas_caro = max(inventario, key=lambda producto: producto['precio'])
-    print(producto_mas_caro)
+        mayor_stock = max(inventario, key=lambda producto: producto['cantidad'])
     print(f"la cantidad de unidades que hay en el inventario es: ",unidades_totales)
     print(f"el total el dinero de todo el inventario es:", total_inventario)
     print(f"la cantidad de productos es:", cantidad)
+    print(f"el producto mas caro de la lista es",producto_mas_caro)
+    print(f"el producto con mayor stock es",mayor_stock)
 def mostrar(inventario):
         for item in inventario:
            print(f"Producto: {item['nombre']} | Precio: {item['precio']} | Cantidad: {item['cantidad']}")
