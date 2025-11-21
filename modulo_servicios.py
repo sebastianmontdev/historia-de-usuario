@@ -1,10 +1,16 @@
 def calcular(inventario):
     total_inventario = 0
+    unidades_totales = 0
     for i in inventario:
+        unidades_totales = unidades_totales + i['cantidad']
         precio_total = i['precio'] * i['cantidad']
         total_inventario = total_inventario + precio_total
         cantidad = len(inventario)
-    print(f"el total el dinero de todo el inventario es:", total_inventario, "la cantidad de productos es:", cantidad)
+        producto_mas_caro = max(inventario, key=lambda producto: producto['precio'])
+    print(producto_mas_caro)
+    print(f"la cantidad de unidades que hay en el inventario es: ",unidades_totales)
+    print(f"el total el dinero de todo el inventario es:", total_inventario)
+    print(f"la cantidad de productos es:", cantidad)
 def mostrar(inventario):
         for item in inventario:
            print(f"Producto: {item['nombre']} | Precio: {item['precio']} | Cantidad: {item['cantidad']}")
@@ -23,8 +29,7 @@ def buscar(inventario,nombre_buscado):
             print(f"   Nombre: {producto['nombre']}")
             return producto
         else:
-            print("producto inexistente")
-            return None
+            print("producto inexisten")
              
               
           

@@ -42,7 +42,17 @@ while inicio == True:
     elif opcion == 4:
         print()
     elif opcion == 5:
-        print()
+        nombre_a_eliminar = input("inserte el nombre del producto que desea eliminar")
+        elemento_encontrado = None
+        for producto in inventario:
+            if producto["nombre"] == nombre_a_eliminar:
+                elemento_encontrado = producto
+                break
+        if elemento_encontrado:
+            inventario.remove(elemento_encontrado)
+            print(f"✅ Diccionario con nombre '{nombre_a_eliminar}' eliminado.")
+        else:
+            print(f"❌ Diccionario con nombre '{nombre_a_eliminar}' no encontrado.")    
     elif opcion == 6:
         calcular(inventario)
     elif opcion == 7:
