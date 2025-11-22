@@ -1,5 +1,5 @@
-
-from modulo_servicios import mostrar,agregar,calcular,buscar
+import csv
+from modulo_servicios import mostrar,agregar,calcular,buscar,guardar,cargar,eliminar
 inventario = [
      {"nombre" : "papa","precio" : 2.5, "cantidad" : 5},
      {"nombre" : "banano","precio" : 1.0, "cantidad" : 3}
@@ -48,17 +48,17 @@ while inicio == True:
             if producto["nombre"] == nombre_a_eliminar:
                 elemento_encontrado = producto
                 break
-        if elemento_encontrado:
-            inventario.remove(elemento_encontrado)
-            print(f"✅ Diccionario con nombre '{nombre_a_eliminar}' eliminado.")
-        else:
-            print(f"❌ Diccionario con nombre '{nombre_a_eliminar}' no encontrado.")    
+            if elemento_encontrado:
+                inventario.remove(elemento_encontrado)
+                print(f"✅ Diccionario con nombre '{nombre_a_eliminar}' eliminado.")
+            else:
+                print(f"❌ Diccionario con nombre '{nombre_a_eliminar}' no encontrado.")    
     elif opcion == 6:
         calcular(inventario)
     elif opcion == 7:
-        print()
+        guardar(inventario)
     elif opcion == 8:
-        print()
+        cargar(inventario)
     elif opcion == 9:
         print("saliendo del sistema")
         break
